@@ -38,6 +38,7 @@
     ".next/types/**/*.ts",
     "eslint.config.mjs",
     "postcss.config.mjs",
+    "scripts/*.mjs"
   ],
   "exclude": ["node_modules"]
 }
