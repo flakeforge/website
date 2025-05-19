@@ -1,0 +1,1 @@
+export { NextIntlProvider } from './NextIntlProvider'
