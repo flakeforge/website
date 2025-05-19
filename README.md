@@ -41,34 +41,15 @@ pnpm dev
 Open [localhost:3000](http://localhost:3000) in your browser.
 
 > [!NOTE]
-> You need to create .env following the example of .env.example so that all parameters are
+> You need to create `.env` following the example of `.env.example` so that all parameters are
 
-## 📁 Project Structure
-```
-src/
-├── app/                # Next.js app directory
-├── shared/             # Shared utilities, types, assets, styles
-├── entities/           # Business models and domain logic
-├── features/           # Independent features
-├── widgets/            # UI-level connected units
-└── modules/            # Static route fallback (optional)
-```
-> [!NOTE]
-> This structure follows the Feature-Sliced Design methodology. Changes should respect this convention.
-
----
-
-# 🧪 Development Tips
+## Development Tips
 - Avoid using any, prefer strong typing
-- Use GSAP via hooks for smoother animations
+- Use **GSAP** via hooks for smoother animations
 - Run eslint to ensure code quality
 - Keep components atomic and reusable
 
----
-
 ## 📄 License
-Licensed under the MIT License.
-
----
+Licensed under the **MIT License**.
 
 Let me know if you'd like to localize the README into other languages or generate a minimal version for internal use.
