@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <h1>FlakeForge</h1>
+  <p><b>Elevating web experience with animation, structure, and speed.</b></p>
+  <p>Crafted with modern tools & best practices to deliver a fast, scalable, and visually stunning static site.</p>
+</div>
 
-## Getting Started
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-SSG%20Ready-blue?style=for-the-badge&logo=next.js" />
+  <img src="https://img.shields.io/badge/TailwindCSS-v4-38BDF8?style=for-the-badge&logo=tailwind-css" />
+  <img src="https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript" />
+  <img src="https://img.shields.io/badge/FSD-Architecture-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/GSAP-Animations-88CE02?style=for-the-badge&logo=greensock" />
+  <img src="https://img.shields.io/badge/Linting-ESLint-4B32C3?style=for-the-badge&logo=eslint" />
+</p>
 
-First, run the development server:
+---
+
+## 🚀 Tech Stack
+
+- **Next.js** — Static Site Generation (SSG) support for speed & SEO
+- **Tailwind CSS v4** — Utility-first styling
+- **TypeScript** — Strict type safety
+- **GSAP** — Smooth, high-performance animations
+- **FSD** — Feature-Sliced Design architecture
+- **ESLint** — Consistent, clean code standards
+- **Custom Components** — Reusable UI built for scalability
+
+---
+
+## 📦 Getting Started
 
 ```bash
+# Install dependencies
+npm install
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+--- 
+## 📁 Project Structure
+```
+src/
+├── app/                # Next.js app directory
+├── shared/             # Shared utilities, types, assets, styles
+├── entities/           # Business models and domain logic
+├── features/           # Independent features
+├── widgets/            # UI-level connected units
+└── modules/            # Static route fallback (optional)
+```
+> [!NOTE]
+> This structure follows the Feature-Sliced Design methodology. Changes should respect this convention.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# 🧪 Development Tips
+- Avoid using any, prefer strong typing
+- Use GSAP via hooks for smoother animations
+- Run eslint to ensure code quality
+- Keep components atomic and reusable
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 License
+Licensed under the MIT License.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Let me know if you'd like to localize the README into other languages or generate a minimal version for internal use.
