@@ -5,12 +5,12 @@
 </div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-SSG%20Ready-blue?style=for-the-badge&logo=next.js" />
-  <img src="https://img.shields.io/badge/TailwindCSS-v4-38BDF8?style=for-the-badge&logo=tailwind-css" />
-  <img src="https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript" />
-  <img src="https://img.shields.io/badge/FSD-Architecture-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/GSAP-Animations-88CE02?style=for-the-badge&logo=greensock" />
-  <img src="https://img.shields.io/badge/Linting-ESLint-4B32C3?style=for-the-badge&logo=eslint" />
+  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-SSG%20Ready-000000?style=flat&logo=next.js&logoColor=white&labelColor=20222d" />
+  <img alt="TailwindCSS" src="https://img.shields.io/badge/TailwindCSS-v4-38BDF8?style=flat&logo=tailwind-css&logoColor=white&labelColor=20222d" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-Strict-3178C6?style=flat&logo=typescript&logoColor=white&labelColor=20222d" />
+  <img alt="FSD" src="https://img.shields.io/badge/FSD-Architecture-orange?style=flat&labelColor=20222d&logoColor=white" />
+  <img alt="GSAP" src="https://img.shields.io/badge/GSAP-Animations-88CE02?style=flat&logo=greensock&logoColor=white&labelColor=20222d" />
+  <img alt="ESLint" src="https://img.shields.io/badge/Linting-ESLint-4B32C3?style=flat&logo=eslint&logoColor=white&labelColor=20222d" />
 </p>
 
 ---
