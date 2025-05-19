@@ -1,7 +1,10 @@
 <div align="center">
-  <h1>FlakeForge</h1>
-  <p><b>Elevating web experience with animation, structure, and speed.</b></p>
-  <p>Crafted with modern tools & best practices to deliver a fast, scalable, and visually stunning static site.</p>
+  <h1><samp>FlakeForge Website</samp></h1>
+  <p>
+    <samp>
+      The official website of FlakeForge — a modern, fast, and visually engaging static site showcasing our projects, blogs, and other tech-related content. Built with best practices to deliver an exceptional user experience through clean structure, smooth animations, and high performance.
+    </samp>
+  </p>
 </div>
 
 <p align="center">
@@ -13,32 +16,33 @@
   <img alt="ESLint" src="https://img.shields.io/badge/Linting-ESLint-4B32C3?style=flat&logo=eslint&logoColor=white&labelColor=20222d" />
 </p>
 
----
+## Stack technologies
+- [React](https://react.dev/learn) + [Typescript](https://www.typescriptlang.org/docs/) - UI library and Strict type safety
+- [Tailwind CSS](https://tailwindcss.com) — Utility-first styling
+- [GSAP](https://gsap.com) — Smooth, high-performance animations
+- [FSD](https://feature-sliced.design) — Feature-Sliced Design architecture
+- [ESLint](https://eslint.org/) — Consistent, clean code standards for linting
+- [Nextjs](https://Nextjs.org/) - framework for SSG
 
-## 🚀 Tech Stack
+## Basic requirements for the project
 
-- **Next.js** — Static Site Generation (SSG) support for speed & SEO
-- **Tailwind CSS v4** — Utility-first styling
-- **TypeScript** — Strict type safety
-- **GSAP** — Smooth, high-performance animations
-- **FSD** — Feature-Sliced Design architecture
-- **ESLint** — Consistent, clean code standards
-- **Custom Components** — Reusable UI built for scalability
+> [!NOTE]
+> Version Node +v20\*
 
----
-
-## 📦 Getting Started
+## For Developers
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 # Start the development server
-npm run dev
+pnpm dev
 ```
 
-Open http://localhost:3000 in your browser.
+Open [localhost:3000](http://localhost:3000) in your browser.
 
---- 
+> [!NOTE]
+> You need to create .env following the example of .env.example so that all parameters are
+
 ## 📁 Project Structure
 ```
 src/
