@@ -21,6 +21,8 @@
     --secondary: var(--color-secondary);
     --background: var(--color-background);
     --foreground: var(--color-text);
+
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Dark mode variant */
@@ -29,6 +31,8 @@
     --secondary: var(--color-secondary-dark);
     --background: var(--color-background-dark);
     --foreground: var(--color-text-dark);
+
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -61,4 +65,5 @@ body {
   color: var(--foreground);
   font-family: system-ui, sans-serif;
   @apply antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

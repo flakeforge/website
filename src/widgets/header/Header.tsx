@@ -9,8 +9,9 @@ export const Header: FC = () => {
   return (
     <header className="flex items-center justify-between">
       <p>header</p>
+
       <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-        <span>{theme}</span>
+        {theme === 'dark' ? 'light mode' : 'dark mode'}
       </button>
     </header>
   )
