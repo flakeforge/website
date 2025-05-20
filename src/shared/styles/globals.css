@@ -1,24 +1,63 @@
 @import "tailwindcss";
 
+/* Root color tokens */
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --accent: #2563eb; /* blue-600 */
+  --muted: #f3f4f6;   /* gray-100 */
+  --border: #e5e7eb;  /* gray-200 */
 }
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-}
-
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    --accent: #3b82f6; /* blue-500 */
+    --muted: #1f2937;  /* gray-800 */
+    --border: #374151; /* gray-700 */
+  }
 }
 
+/* Tailwind theme bindings */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+}
+
+/* Utilities */
+@utility flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility container-padding {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Base styles */
 body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, sans-serif;
+  @apply antialiased;
 }
