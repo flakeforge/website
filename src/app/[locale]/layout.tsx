@@ -1,10 +1,13 @@
 import { type FC, type PropsWithChildren } from 'react'
 import { notFound } from 'next/navigation'
-import { hasLocale } from 'next-intl'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
 
 import { Layout } from '@app/layouts'
-import { NextIntlProvider } from '@app/providers'
 import { routing } from '@lib/i18n'
+
+import '@styles/globals.css'
+
+export { metadata, viewport } from './config'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -18,9 +21,13 @@ const LocaleLayout: FC<PropsWithChildren<Props>> = async ({ children, params }) 
   }
 
   return (
-    <NextIntlProvider locale={locale}>
-      <Layout>{children}</Layout>
-    </NextIntlProvider>
+    <html suppressHydrationWarning lang={locale}>
+      <body>
+        <NextIntlClientProvider>
+          <Layout>{children}</Layout>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   )
 }
 
