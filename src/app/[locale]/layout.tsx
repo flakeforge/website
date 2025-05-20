@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 
 import { Layout } from '@app/layouts'
+import { ThemeProvider } from '@app/providers'
 import { routing } from '@lib/i18n'
 
 import '@styles/globals.css'
@@ -24,7 +25,9 @@ const LocaleLayout: FC<PropsWithChildren<Props>> = async ({ children, params }) 
     <html suppressHydrationWarning lang={locale}>
       <body>
         <NextIntlClientProvider>
-          <Layout>{children}</Layout>
+          <ThemeProvider>
+            <Layout>{children}</Layout>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

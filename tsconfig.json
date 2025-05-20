@@ -40,5 +40,5 @@
     "postcss.config.mjs",
     "scripts/*.mjs"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next"]
 }

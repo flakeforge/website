@@ -1,6 +1,7 @@
 import { type Metadata, type Viewport } from 'next'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://flakeforge.com'),
   title: {
     default: 'FlakeForge – Forging ideas into reality',
     template: '%s | FlakeForge',
