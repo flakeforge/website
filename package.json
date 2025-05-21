@@ -21,26 +21,28 @@
     "reset": "pnpm clean && pnpm install"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "next": "15.3.2",
     "next-intl": "^4.1.0",
     "next-themes": "^0.4.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
     "@eslint/compat": "1.2.9",
-    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "9.27.0",
     "@next/bundle-analyzer": "^15.3.2",
     "@tailwindcss/postcss": "^4.1.7",
-    "@types/node": "^20.12.12",
-    "@types/react": "^19.0.0-rc.1",
-    "@types/react-dom": "^19.0.0-rc.1",
+    "@types/node": "^20.17.50",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
     "@typescript-eslint/eslint-plugin": "8.32.1",
     "@typescript-eslint/parser": "8.32.1",
     "autoprefixer": "^10.4.21",
     "chalk": "^5.4.1",
-    "eslint": "^9.9.0",
+    "eslint": "^9.27.0",
     "eslint-config-next": "15.3.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "2.31.0",
@@ -59,8 +61,8 @@
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "postcss": "^8.5.3",
-    "prettier": "^3.3.2",
-    "tailwindcss": "^4",
-    "typescript": "^5.4.5"
+    "prettier": "^3.5.3",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5.8.3"
   }
 }
