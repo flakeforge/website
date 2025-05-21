@@ -2,6 +2,9 @@ import { type FC, type PropsWithChildren } from 'react'
 import { notFound } from 'next/navigation'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
+
 import { Layout } from '@app/layouts'
 import { ThemeProvider } from '@app/providers'
 import { routing } from '@lib/i18n'
@@ -23,7 +26,7 @@ const LocaleLayout: FC<PropsWithChildren<Props>> = async ({ children, params }) 
 
   return (
     <html suppressHydrationWarning lang={locale}>
-      <body>
+      <body className={`${GeistMono.variable} ${GeistSans.variable}`}>
         <NextIntlClientProvider>
           <ThemeProvider>
             <Layout>{children}</Layout>

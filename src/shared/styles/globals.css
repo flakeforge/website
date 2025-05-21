@@ -12,6 +12,10 @@
   --color-secondary-dark: #4ade80;
   --color-background-dark: #030303;
   --color-text-dark: #ffffff;
+
+  /* Fonts */
+  --font-sans: "Geist Sans", sans-serif;
+  --font-mono: "Geist Mono", monospace;
 }
 
 @layer base {
@@ -21,7 +25,6 @@
     --secondary: var(--color-secondary);
     --background: var(--color-background);
     --foreground: var(--color-text);
-
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -31,7 +34,14 @@
     --secondary: var(--color-secondary-dark);
     --background: var(--color-background-dark);
     --foreground: var(--color-text-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 
+  /* Base styles */
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply font-sans antialiased;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
@@ -57,13 +67,4 @@
 @utility container-padding {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-/* Base styles */
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: system-ui, sans-serif;
-  @apply antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }

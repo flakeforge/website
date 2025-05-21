@@ -1,3 +1,10 @@
 {
-  "Brand": "FlakeForge"
+  "Brand": "FlakeForge",
+  "Layout": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "showcase": "Showcase",
+    "blog": "Blog"
+  }
 }
