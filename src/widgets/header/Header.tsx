@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
 
 import { Logo } from '@shared/ui'
+import { Button } from '@shared/ui/button'
 import { MAIN_HEADER_CONFIG } from '@widgets/header/config'
 import { Link } from '@lib/i18n'
 
@@ -21,7 +22,7 @@ export const Header: FC = () => {
           {MAIN_HEADER_CONFIG.map(({ title, href }) => (
             <li key={href}>
               <Link
-                className="text-base font-bold text-muted-foreground hover:text-primary transition-colors"
+                className="text-base font-mono font-bold text-muted-foreground hover:text-primary transition-colors"
                 href={href}
               >
                 {t(title)}
@@ -31,9 +32,9 @@ export const Header: FC = () => {
         </ul>
       </nav>
 
-      <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+      <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
         {theme === 'dark' ? 'light mode' : 'dark mode'}
-      </button>
+      </Button>
     </header>
   )
 }
