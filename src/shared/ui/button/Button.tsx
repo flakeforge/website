@@ -1,3 +1,5 @@
+'use client'
+
 import { type ButtonHTMLAttributes, type ElementType, forwardRef, type ReactNode } from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
@@ -9,21 +11,15 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primary text-white hover:bg-slate-800 shadow-md hover:shadow-lg',
-        destructive: 'bg-red-600 text-white hover:bg-red-700 shadow-md hover:shadow-lg',
+        default: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
+        destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
         outline:
-          'border border-slate-200 bg-white hover:bg-slate-50 hover:text-slate-900 shadow-sm hover:shadow-md',
-        secondary: 'bg-slate-100 text-slate-900 hover:bg-slate-200 shadow-sm hover:shadow-md',
-        ghost: 'hover:bg-slate-100 hover:text-slate-900',
-        link: 'text-slate-900 underline-offset-4 hover:underline',
-        gradient:
-          'bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-700 hover:to-indigo-700 shadow-lg hover:shadow-xl',
-        success: 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-md hover:shadow-lg',
-        warning: 'bg-amber-600 text-white hover:bg-amber-700 shadow-md hover:shadow-lg',
-        info: 'bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg',
-        premium:
-          'bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 shadow-xl hover:shadow-2xl',
+          'border border-primary bg-background text-primary shadow-sm hover:bg-accent hover:text-primary',
+        secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
+        ghost: 'hover:bg-accent hover:text-accent-foreground',
+        link: 'text-primary underline-offset-4 hover:underline',
       },
+
       size: {
         default: 'h-10 px-4 py-2',
         sm: 'h-9 rounded-md px-3 text-xs',
@@ -74,7 +70,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const isDisabled = disabled || loading
 
-    const buttonContent = (
+    const content = (
       <>
         {loading ? (
           <svg
@@ -112,7 +108,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           disabled={isDisabled}
           {...props}
         >
-          {buttonContent}
+          {content}
         </Component>
       )
     }
@@ -124,7 +120,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isDisabled}
         {...props}
       >
-        {buttonContent}
+        {content}
       </button>
     )
   }

@@ -6,12 +6,20 @@
   --color-secondary: #34a853;
   --color-background: #ffffff;
   --color-text: #000000;
+  --color-destructive: #ef4444;
+  --color-accent: #f1f5f9;
+  --color-input: #d1d5db;
+  --color-ring: #3b82f6;
 
   /* Dark mode colors */
   --color-primary-dark: #FF4C24;
   --color-secondary-dark: #4ade80;
   --color-background-dark: #030303;
   --color-text-dark: #ffffff;
+  --color-destructive-dark: #dc2626;
+  --color-accent-dark: #1e293b;
+  --color-input-dark: #4b5563;
+  --color-ring-dark: #60a5fa;
 
   /* Fonts */
   --font-sans: "Geist Sans", sans-serif;
@@ -25,6 +33,11 @@
     --secondary: var(--color-secondary);
     --background: var(--color-background);
     --foreground: var(--color-text);
+    --destructive: var(--color-destructive);
+    --accent: var(--color-accent);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --ring-offset-background: var(--color-background);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -34,6 +47,11 @@
     --secondary: var(--color-secondary-dark);
     --background: var(--color-background-dark);
     --foreground: var(--color-text-dark);
+    --destructive: var(--color-destructive-dark);
+    --accent: var(--color-accent-dark);
+    --input: var(--color-input-dark);
+    --ring: var(--color-ring-dark);
+    --ring-offset-background: var(--color-background-dark);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -53,6 +71,12 @@
   justify-content: center;
 }
 
+@utility flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @utility flex-col-center {
   display: flex;
   flex-direction: column;
@@ -64,7 +88,10 @@
   text-wrap: balance;
 }
 
-@utility container-padding {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+@utility container-center {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

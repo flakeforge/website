@@ -14,27 +14,29 @@ export const Header: FC = () => {
   const t = useTranslations('Layout')
 
   return (
-    <header className="sticky top-0 z-50 border-b py-5 flex items-center backdrop-blur-sm justify-between">
-      <Logo />
+    <header className="sticky top-0 z-50 border-b py-2 backdrop-blur-sm w-full">
+      <div className=" container-center flex-between">
+        <Logo />
 
-      <nav>
-        <ul className="flex items-center gap-8">
-          {MAIN_HEADER_CONFIG.map(({ title, href }) => (
-            <li key={href}>
-              <Link
-                className="text-base font-mono font-bold text-muted-foreground hover:text-primary transition-colors"
-                href={href}
-              >
-                {t(title)}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        <nav>
+          <ul className="flex items-center gap-8">
+            {MAIN_HEADER_CONFIG.map(({ title, href }) => (
+              <li key={href}>
+                <Link
+                  className="text-base font-mono font-semibold text-muted-foreground hover:text-primary transition-colors"
+                  href={href}
+                >
+                  {t(title)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-      <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-        {theme === 'dark' ? 'light mode' : 'dark mode'}
-      </Button>
+        <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+          {theme === 'dark' ? 'light mode' : 'dark mode'}
+        </Button>
+      </div>
     </header>
   )
 }
