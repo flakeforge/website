@@ -15,7 +15,7 @@ export const Header: FC = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b py-2 backdrop-blur-sm w-full">
-      <div className=" container-center flex-between">
+      <div className="flex-between container-center">
         <Logo />
 
         <nav>
@@ -33,7 +33,7 @@ export const Header: FC = () => {
           </ul>
         </nav>
 
-        <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+        <Button hoverText="salom" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
           {theme === 'dark' ? 'light mode' : 'dark mode'}
         </Button>
       </div>

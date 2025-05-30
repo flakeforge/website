@@ -1,7 +1,12 @@
 import { type FC } from 'react'
 
-import { cn } from '@lib/utils'
+import { ROUTES } from '@shared/config'
+import { Link } from '@lib/i18n'
 
-export const Logo: FC = () => <div className={cn('font-black font-mono text-3xl')}>FlakeForge</div>
+export const Logo: FC = () => (
+  <Link href={ROUTES.HOME}>
+    <div className="font-black font-mono text-3xl">FlakeForge</div>
+  </Link>
+)
 
 Logo.displayName = 'Logo'
