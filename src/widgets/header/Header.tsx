@@ -15,7 +15,7 @@ export const Header: FC = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b py-2 backdrop-blur-sm w-full">
-      <div className="flex-between container-center">
+      <div className="container-center flex-between">
         <Logo />
 
         <nav>
