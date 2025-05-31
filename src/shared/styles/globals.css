@@ -21,9 +21,8 @@
   --color-input-dark: #4b5563;
   --color-ring-dark: #60a5fa;
 
-  /* Fonts */
-  --font-sans: "Geist Sans", sans-serif;
-  --font-mono: "Geist Mono", monospace;
+  /* fonts */
+  --font-sans: 'Markdisc', sans-serif;
 }
 
 @layer base {
@@ -38,6 +37,7 @@
     --input: var(--color-input);
     --ring: var(--color-ring);
     --ring-offset-background: var(--color-background);
+    --font-sans: 'Markdisc', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -52,6 +52,7 @@
     --input: var(--color-input-dark);
     --ring: var(--color-ring-dark);
     --ring-offset-background: var(--color-background-dark);
+    --font-sans: 'Markdisc', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -59,9 +60,18 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    @apply font-sans antialiased;
+    @apply antialiased font-sans;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+}
+
+/* Add this at the top of your CSS file */
+@font-face {
+  font-family: 'Markdisc';
+  src: url('public/fonts/markdisc-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Utilities */

@@ -23,7 +23,7 @@ export const Header: FC = () => {
             {MAIN_HEADER_CONFIG.map(({ title, href }) => (
               <li key={href}>
                 <Link
-                  className="text-base font-mono font-semibold text-muted-foreground hover:text-primary transition-colors"
+                  className="text-base text-muted-foreground hover:text-primary transition-colors"
                   href={href}
                 >
                   {t(title)}
