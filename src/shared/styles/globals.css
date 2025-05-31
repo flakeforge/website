@@ -37,7 +37,7 @@
     --input: var(--color-input);
     --ring: var(--color-ring);
     --ring-offset-background: var(--color-background);
-    --font-sans: 'Markdisc', sans-serif;
+    --font-sans: 'Orkney', ui-sans-serif, system-ui, -apple-system, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -52,7 +52,7 @@
     --input: var(--color-input-dark);
     --ring: var(--color-ring-dark);
     --ring-offset-background: var(--color-background-dark);
-    --font-sans: 'Markdisc', sans-serif;
+    --font-sans: 'Orkney', ui-sans-serif, system-ui, -apple-system, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -67,9 +67,33 @@
 
 /* Add this at the top of your CSS file */
 @font-face {
-  font-family: 'Markdisc';
-  src: url('public/fonts/markdisc-regular.woff2') format('woff2');
+  font-family: 'Orkney';
+  src: url('public/fonts/Orkney-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orkney';
+  src: url('public/fonts/Orkney-Regular.woff2') format('woff2');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orkney';
+  src: url('public/fonts/Orkney-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orkney';
+  src: url('public/fonts/Orkney-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }

@@ -15,7 +15,7 @@ export const Header: FC = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b py-2 backdrop-blur-sm w-full">
-      <div className=" container-center flex-between">
+      <div className="container-center flex-between">
         <Logo />
 
         <nav>
@@ -23,7 +23,7 @@ export const Header: FC = () => {
             {MAIN_HEADER_CONFIG.map(({ title, href }) => (
               <li key={href}>
                 <Link
-                  className="text-base text-muted-foreground hover:text-primary transition-colors"
+                  className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
                   href={href}
                 >
                   {t(title)}
@@ -33,9 +33,7 @@ export const Header: FC = () => {
           </ul>
         </nav>
 
-        <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-          {theme === 'dark' ? 'light mode' : 'dark mode'}
-        </Button>
+        <Button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>theme</Button>
       </div>
     </header>
   )
