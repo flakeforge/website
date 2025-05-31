@@ -1,13 +1,23 @@
 import type { MetadataRoute } from 'next'
 
+import { LOCALES } from '@lib/i18n'
+
+const pages = ['', 'about', 'contact']
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://flakeforge.com',
-      lastModified: '2021-01-01',
-      changeFrequency: 'weekly',
-      priority: 0.5,
-      images: ['https://example.com/image.jpg'],
-    },
-  ]
+  const lastModified = new Date().toISOString()
+  const urls: MetadataRoute.Sitemap = []
+
+  for (const locale of LOCALES) {
+    for (const page of pages) {
+      urls.push({
+        url: `https://flakeforge.com/${locale}${page ? `/${page}` : ''}`,
+        lastModified,
+        changeFrequency: 'weekly',
+        priority: page === '' ? 1.0 : 0.8,
+      })
+    }
+  }
+
+  return urls
 }
