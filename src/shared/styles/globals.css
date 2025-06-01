@@ -3,12 +3,13 @@
 @theme {
   /* Light mode colors */
   --color-primary: #FF4C24;
+  --color-foreground: #000000;
   --color-secondary: #34a853;
   --color-background: #ffffff;
   --color-text: #000000;
   --color-destructive: #ef4444;
   --color-accent: #f1f5f9;
-  --color-input: #d1d5db;
+  --color-input: #c4c4c4;
   --color-ring: #3b82f6;
 
   /* Dark mode colors */
@@ -60,7 +61,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    @apply antialiased font-sans;
+    @apply antialiased font-sans border-input;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
