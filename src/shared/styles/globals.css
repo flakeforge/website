@@ -3,26 +3,28 @@
 @theme {
   /* Light mode colors */
   --color-primary: #FF4C24;
+  --color-foreground: #000000;
   --color-secondary: #34a853;
   --color-background: #ffffff;
   --color-text: #000000;
   --color-destructive: #ef4444;
   --color-accent: #f1f5f9;
-  --color-input: #d1d5db;
+  --color-input: #c4c4c4;
   --color-ring: #3b82f6;
 
   /* Dark mode colors */
   --color-primary-dark: #FF4C24;
+  --color-foreground-dark: #e5e5e5;
   --color-secondary-dark: #4ade80;
-  --color-background-dark: #030303;
-  --color-text-dark: #ffffff;
+  --color-background-dark: #0a0a0a;
+  --color-text-dark: #e5e5e5;
   --color-destructive-dark: #dc2626;
   --color-accent-dark: #1e293b;
   --color-input-dark: #4b5563;
   --color-ring-dark: #60a5fa;
 
-  /* fonts */
-  --font-sans: 'Markdisc', sans-serif;
+  /* Fonts */
+  --font-sans: 'Orkney', sans-serif;
 }
 
 @layer base {
@@ -31,7 +33,7 @@
     --primary: var(--color-primary);
     --secondary: var(--color-secondary);
     --background: var(--color-background);
-    --foreground: var(--color-text);
+    --foreground: var(--color-foreground);
     --destructive: var(--color-destructive);
     --accent: var(--color-accent);
     --input: var(--color-input);
@@ -46,7 +48,7 @@
     --primary: var(--color-primary-dark);
     --secondary: var(--color-secondary-dark);
     --background: var(--color-background-dark);
-    --foreground: var(--color-text-dark);
+    --foreground: var(--color-foreground-dark);
     --destructive: var(--color-destructive-dark);
     --accent: var(--color-accent-dark);
     --input: var(--color-input-dark);
@@ -60,12 +62,11 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    @apply antialiased font-sans;
+    @apply antialiased font-sans border-input;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
-/* Add this at the top of your CSS file */
 @font-face {
   font-family: 'Orkney';
   src: url('public/fonts/Orkney-Light.woff2') format('woff2');

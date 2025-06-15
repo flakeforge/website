@@ -1,7 +1,9 @@
+import { ROUTES } from '@shared/config'
+
 export const MAIN_HEADER_CONFIG = [
-  { title: 'home', href: '/' },
-  { title: 'about', href: '/about' },
-  { title: 'showcase', href: '/showcase' },
-  { title: 'blog', href: '/blog' },
-  { title: 'contact', href: '/contact' },
+  { title: 'home', href: ROUTES.HOME },
+  { title: 'showcase', href: ROUTES.SHOWCASE },
+  { title: 'about', href: ROUTES.ABOUT },
+  { title: 'news', href: ROUTES.NEWS },
+  { title: 'contact', href: ROUTES.CONTACT },
 ]

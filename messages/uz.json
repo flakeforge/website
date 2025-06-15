@@ -1,10 +1,15 @@
 {
   "Brand": "FlakeForge",
   "Layout": {
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "showcase": "Showcase",
-    "blog": "Blog"
+    "home": "Bosh sahifa",
+    "about": "Haqida",
+    "contact": "Aloqa",
+    "showcase": "Ko‘rgazma",
+    "blog": "Blog",
+    "usecases": "Qo‘llanilish holatlari",
+    "offers": "Takliflar",
+    "careers": "Karyeralar",
+    "jobs": "Ish o‘rinlari",
+    "news": "Yangiliklar"
   }
 }

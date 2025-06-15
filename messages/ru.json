@@ -1,10 +1,15 @@
 {
   "Brand": "FlakeForge",
   "Layout": {
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "showcase": "Showcase",
-    "blog": "Blog"
+    "home": "Главная",
+    "about": "О нас",
+    "contact": "Контакты",
+    "showcase": "Витрина",
+    "blog": "Блог",
+    "usecases": "Примеры использования",
+    "offers": "Предложения",
+    "careers": "Карьера",
+    "jobs": "Вакансии",
+    "news": "Новости"
   }
 }
