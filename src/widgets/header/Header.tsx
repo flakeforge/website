@@ -224,7 +224,6 @@ export const Header: FC = () => {
             {currentLocale}
           </Button>
 
-          {/* Blog Button */}
           <Button
             aria-label="Visit Blog"
             className="px-6 hover:text-primary hover:bg-primary/5 h-full rounded-none font-medium text-sm uppercase tracking-wide transition-all duration-300 cursor-pointer"
