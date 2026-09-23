@@ -1,3 +1,252 @@
 {
-  "Brand": "FlakeForge"
+  "Metadata": {
+    "siteDescription": "FlakeForge is a product studio. We build web apps, mobile apps, and Telegram bots, and publish our own tools as open source.",
+    "home": {
+      "title": "FlakeForge: product studio and open source",
+      "description": "We build web apps, mobile apps, and Telegram bots for clients, and publish the tools we make along the way on GitHub."
+    },
+    "work": {
+      "title": "Work",
+      "description": "Client projects and our own products, with case studies and links to the source code."
+    },
+    "services": {
+      "title": "Services",
+      "description": "Web development, mobile apps, and Telegram bots and Mini Apps. What each service includes and how a project runs."
+    },
+    "about": {
+      "title": "About",
+      "description": "Who we are, how we like to work, and why we publish our tools as open source."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Notes on how we build things: tools, technical decisions, and problems we ran into."
+    },
+    "contact": {
+      "title": "Start a project",
+      "description": "Tell us what you want to build. We reply by email or Telegram."
+    },
+    "notFound": {
+      "title": "Page not found"
+    }
+  },
+  "Common": {
+    "skipToContent": "Skip to content",
+    "homeLabel": "FlakeForge, home page",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu",
+    "language": "Language",
+    "mainNavigation": "Main",
+    "startProject": "Start a project",
+    "readingTime": "{minutes} min read",
+    "englishVersion": "In English",
+    "newTab": "(opens in a new tab)",
+    "backToTop": "Back to top",
+    "copyCode": "Copy code",
+    "copied": "Copied"
+  },
+  "Theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "Nav": {
+    "work": "Work",
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "Services": {
+    "web": {
+      "title": "Web development",
+      "summary": "Sites, web apps, and internal tools, built with Next.js and TypeScript.",
+      "points": [
+        "Marketing sites and landing pages",
+        "Web applications and dashboards",
+        "Speed, accessibility, and SEO fixes on sites you already have"
+      ]
+    },
+    "mobile": {
+      "title": "Mobile apps",
+      "summary": "iOS and Android apps for products that people use on their phones every day.",
+      "points": [
+        "Apps for iOS and Android",
+        "One shared codebase where the product allows it",
+        "Store submission and release updates"
+      ]
+    },
+    "telegram": {
+      "title": "Telegram bots and Mini Apps",
+      "summary": "Bots and Mini Apps for products whose users already spend their day in Telegram.",
+      "points": [
+        "Bots for support, sales, and notifications",
+        "Mini Apps with a full web interface inside Telegram",
+        "Connections to your backend, CRM, or payment provider"
+      ]
+    }
+  },
+  "Process": {
+    "discover": {
+      "title": "Discover",
+      "body": "We talk through the problem, the people who will use the product, and the limits on time and budget. You get a written scope for the first release."
+    },
+    "design": {
+      "title": "Design",
+      "body": "We map the main flows, then design the screens that matter most. You click through a prototype before we write production code."
+    },
+    "build": {
+      "title": "Build",
+      "body": "We work in short cycles and deploy to a staging link you can open at any time. Code goes through review before it merges."
+    },
+    "launch": {
+      "title": "Launch",
+      "body": "We ship the first release, watch how people use it, and fix what gets in their way. Then we either keep going with you or hand over the code and docs."
+    }
+  },
+  "Home": {
+    "hero": {
+      "title": "Forging ideas <accent>into reality.</accent>",
+      "lede": "We design and build web apps, mobile apps, and Telegram bots. The tools we make for ourselves go on GitHub.",
+      "secondary": "See our work"
+    },
+    "services": {
+      "title": "What we build",
+      "cta": "All services"
+    },
+    "work": {
+      "title": "Selected work",
+      "cta": "All projects"
+    },
+    "openSource": {
+      "title": "Built in the open",
+      "body": "Our tools and some of our products are public on GitHub. You can read the code before you decide to work with us.",
+      "cta": "FlakeForge on GitHub"
+    },
+    "process": {
+      "title": "How a project runs"
+    },
+    "writing": {
+      "title": "Latest posts",
+      "cta": "All posts"
+    },
+    "closing": {
+      "title": "Have something to build?",
+      "body": "Tell us about it. A few lines are enough to start the conversation."
+    }
+  },
+  "Project": {
+    "viewCaseStudy": "View case study",
+    "year": "Year",
+    "services": "Services",
+    "stack": "Stack",
+    "license": "License",
+    "status": "Status",
+    "links": "Links",
+    "repository": "Source code",
+    "website": "Live site",
+    "next": "Next project",
+    "kind": {
+      "open-source": "Open source",
+      "client": "Client project"
+    },
+    "statusValue": {
+      "live": "Live",
+      "in-progress": "In progress",
+      "early": "Early stage"
+    },
+    "fallbackNotice": "This case study has not been translated yet, so you are reading the English version."
+  },
+  "WorkPage": {
+    "title": "Work",
+    "intro": "Client projects and our own products. The code for most of them is public."
+  },
+  "ServicesPage": {
+    "title": "Three things, done properly",
+    "intro": "We build for the web, for phones, and for Telegram. Every project starts with a short scope and ends with code you can keep working on.",
+    "includes": "What this covers",
+    "processTitle": "How we work"
+  },
+  "AboutPage": {
+    "title": "We build products for clients and tools for everyone else.",
+    "intro": "FlakeForge is a product studio. We take on client work in web, mobile, and Telegram, and publish the tools we make along the way as open source.",
+    "principlesTitle": "How we like to work",
+    "principles": {
+      "open": {
+        "title": "Open by default",
+        "body": "If something we build is useful outside one project, we publish it under an open license."
+      },
+      "early": {
+        "title": "Ship early",
+        "body": "A small release in front of real users teaches more than a long plan. We get the first version out and improve it from there."
+      },
+      "written": {
+        "title": "Write it down",
+        "body": "Scope, decisions, and setup steps go into writing, so the project does not depend on one person's memory."
+      }
+    },
+    "teamTitle": "People",
+    "roles": {
+      "muhammaddiyor": "Maintainer"
+    },
+    "profile": "GitHub profile"
+  },
+  "Blog": {
+    "title": "Blog",
+    "intro": "Notes on how we build things: tools, technical decisions, and problems we ran into.",
+    "onlyLocale": "Only English",
+    "empty": "No posts in English yet.",
+    "count": "{count, plural, one {# post} other {# posts}}",
+    "fallbackNotice": "This post has not been translated yet, so you are reading the English version.",
+    "back": "All posts",
+    "rss": "RSS feed",
+    "rssTitle": "FlakeForge blog",
+    "tags": "Tags",
+    "morePosts": "More posts"
+  },
+  "Contact": {
+    "title": "Start a project",
+    "intro": "Write a few lines about what you want to build. We reply by email or Telegram.",
+    "direct": "Prefer to write directly?",
+    "email": "Email",
+    "telegram": "Telegram",
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "telegram": "Telegram username",
+      "telegramHint": "Optional. We will write there if you prefer it to email.",
+      "services": "What do you need?",
+      "message": "About the project",
+      "messageHint": "What you want to build, who it is for, and any deadlines.",
+      "honeypot": "Leave this field empty",
+      "submit": "Send message",
+      "sending": "Sending"
+    },
+    "errors": {
+      "required": "Fill in this field.",
+      "email": "Enter a valid email address.",
+      "tooLong": "This is longer than we can accept.",
+      "rateLimited": "Too many messages from your address. Try again in a few minutes.",
+      "unavailable": "The form is not working right now. Write to us at {email} instead.",
+      "failed": "Something went wrong while sending. Try again, or write to us at {email}."
+    },
+    "success": {
+      "title": "Message sent",
+      "body": "Thanks. We will read it and get back to you.",
+      "again": "Send another message"
+    }
+  },
+  "Footer": {
+    "tagline": "Forging ideas into reality.",
+    "pages": "Pages",
+    "openSource": "Open source",
+    "contact": "Contact",
+    "rights": "© {year} FlakeForge"
+  },
+  "NotFound": {
+    "title": "This page does not exist",
+    "body": "The link may be old, or the page moved somewhere else.",
+    "cta": "Go to the home page"
+  }
 }

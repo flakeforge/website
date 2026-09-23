@@ -1,0 +1,27 @@
+---
+title: Fin
+summary: A finance assistant that runs inside Telegram. It tracks expenses, keeps budgets, and shows where the money goes.
+year: 2024
+order: 1
+kind: open-source
+status: live
+services: [telegram, web]
+stack: [Next.js, TypeScript, Node.js, Go]
+license: GPL-3.0
+repository: https://github.com/flakeforge/fin
+website: https://fin.takhirov.uz
+---
+
+## What it is
+
+Fin is a Telegram Mini App for personal finance. You log expenses, set budgets, and read short summaries of your spending without leaving Telegram.
+
+## Why Telegram
+
+A budgeting app only helps if people open it every day. Many people already keep Telegram open all day, so Fin lives there. There is nothing to install and no separate account to create.
+
+## How it is built
+
+The repository is a monorepo with separate `apps` and `packages` folders. The interface is built with Next.js and TypeScript, and the backend uses Node.js and Go. The workspace is managed with pnpm and [moon](https://moonrepo.dev).
+
+The code is public under the GPL-3.0 license, so anyone can read it, run it, and send changes back.

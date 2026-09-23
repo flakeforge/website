@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -11,34 +11,34 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@shared/*": ["src/shared/*"],
-      "@entities/*": ["src/entities/*"],
-      "@features/*": ["src/features/*"],
-      "@widgets/*": ["src/widgets/*"],
-      "@modules/*": ["src/modules/*"],
-      "@styles/*": ["src/shared/styles/*"],
-      "@config/*": ["src/shared/config/*"],
-      "@utils/*": ["src/shared/utils/*"],
-      "@lib/*": ["src/shared/lib/*"]
+      "@/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@features/*": ["./src/features/*"],
+      "@widgets/*": ["./src/widgets/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@styles/*": ["./src/shared/styles/*"],
+      "@config/*": ["./src/shared/config/*"],
+      "@lib/*": ["./src/shared/lib/*"],
+      "@content/*": ["./content/*"]
     }
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts", "**/*.tsx",
+    "**/*.ts",
+    "**/*.tsx",
     ".next/types/**/*.ts",
-    "eslint.config.mjs",
     "postcss.config.mjs",
-    "scripts/*.mjs"
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": ["node_modules", "FlakeForge_Brandkit"]
 }

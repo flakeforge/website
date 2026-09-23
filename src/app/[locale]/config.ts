@@ -1,70 +1,52 @@
 import { type Metadata, type Viewport } from 'next'
+import * as rootParams from 'next/root-params'
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://flakeforge.com'),
-  title: {
-    default: 'FlakeForge – Forging ideas into reality',
-    template: '%s | FlakeForge',
-  },
-  description:
-    'A collective of developers, designers, and technologists crafting open-source tools, scalable apps, and community-driven solutions with precision and care.',
-  authors: [{ name: 'FlakeForge', url: 'https://flakeforge.com' }],
-  creator: 'FlakeForge',
-  publisher: 'FlakeForge Team',
-  robots: {
-    index: true,
-    follow: true,
-  },
+import { getTranslations } from 'next-intl/server'
 
-  openGraph: {
-    type: 'website',
-    title: 'FlakeForge',
-    description:
-      'We forge ideas into purposeful digital tools — from scalable apps to open-source projects and automation bots.',
-    siteName: 'FlakeForge',
-    url: 'https://flakeforge.com',
-    images: [
-      {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'FlakeForge Open Graph Image',
-      },
-    ],
-  },
+import { BASE_URL, SITE } from '@config/site'
+import { isLocale } from '@lib/i18n'
+import { createPageMetadata } from '@lib/seo'
 
-  twitter: {
-    card: 'summary_large_image',
-    title: 'FlakeForge',
-    description:
-      'Join FlakeForge — where ideas become open-source solutions and community-crafted tools.',
-    images: ['/images/twitter-image.jpg'],
-    creator: '@flakeforge',
-  },
+export const generateMetadata = async (): Promise<Metadata> => {
+  const locale = await rootParams.locale()
+  const t = await getTranslations('Metadata')
+  const page = isLocale(locale)
+    ? createPageMetadata({
+        locale,
+        path: '/',
+        title: t('home.title'),
+        description: t('siteDescription'),
+      })
+    : {}
 
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
-  },
-
-  alternates: {
-    canonical: 'https://flakeforge.com',
-    languages: {
-      'uz-UZ': 'https://flakeforge.com/uz',
-      'ru-RU': 'https://flakeforge.com/ru',
-      'en-US': 'https://flakeforge.com/en',
+  return {
+    ...page,
+    metadataBase: new URL(BASE_URL),
+    title: {
+      default: t('home.title'),
+      template: `%s | ${SITE.name}`,
     },
-  },
+    applicationName: SITE.name,
+    authors: [{ name: SITE.name, url: BASE_URL }],
+    creator: SITE.name,
+    publisher: SITE.name,
+    robots: { index: true, follow: true },
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
+      ],
+      apple: '/apple-touch-icon.png',
+    },
+  }
 }
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f0f0f' },
+    { media: '(prefers-color-scheme: light)', color: '#f4f4f2' },
+    { media: '(prefers-color-scheme: dark)', color: '#111318' },
   ],
   colorScheme: 'light dark',
 }

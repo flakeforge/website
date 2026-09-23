@@ -1,33 +1,41 @@
+import * as rootParams from 'next/root-params'
 import { type FC, type PropsWithChildren } from 'react'
-import { notFound } from 'next/navigation'
-import { hasLocale, NextIntlClientProvider } from 'next-intl'
+
+import { NextIntlClientProvider } from 'next-intl'
 
 import { Layout } from '@app/layouts'
-import { ThemeProvider } from '@app/providers'
-import { routing } from '@lib/i18n'
+import { SmoothScrollProvider, ThemeSync } from '@app/providers'
+import { LOCALES } from '@lib/i18n'
+import { THEME_INIT_SCRIPT } from '@lib/theme'
+import { jetbrainsMono, onest } from '@shared/styles/fonts'
+import { InlineScript } from '@shared/ui'
 
 import '@styles/globals.css'
 
-export { metadata, viewport } from './config'
+export { generateMetadata, viewport } from './config'
 
-type Props = {
-  params: Promise<{ locale: string }>
-}
+export const generateStaticParams = (): { locale: string }[] => LOCALES.map(locale => ({ locale }))
 
-const LocaleLayout: FC<PropsWithChildren<Props>> = async ({ children, params }) => {
-  const { locale } = await params
+export const dynamicParams = false
 
-  if (!hasLocale(routing.locales, locale)) {
-    notFound()
-  }
+const LocaleLayout: FC<PropsWithChildren> = async ({ children }) => {
+  const locale = await rootParams.locale()
 
   return (
-    <html suppressHydrationWarning lang={locale}>
+    <html
+      suppressHydrationWarning
+      className={`${onest.variable} ${jetbrainsMono.variable}`}
+      lang={locale}
+    >
+      <head>
+        <InlineScript html={THEME_INIT_SCRIPT} />
+      </head>
       <body>
+        <ThemeSync />
         <NextIntlClientProvider>
-          <ThemeProvider>
+          <SmoothScrollProvider>
             <Layout>{children}</Layout>
-          </ThemeProvider>
+          </SmoothScrollProvider>
         </NextIntlClientProvider>
       </body>
     </html>

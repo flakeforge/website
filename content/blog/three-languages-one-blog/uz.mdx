@@ -1,0 +1,54 @@
+---
+title: Bu blog uch tilda qanday ishlaydi
+description: Har bir post uchun bitta papka, zaxira til sifatida ingliz tili va tarjima qilinmagan postlarni yashiradigan checkbox. FlakeForge blogi qanday tuzilgan.
+date: 2026-09-22
+tags: [next.js, mdx, i18n]
+---
+
+FlakeForge sayti ingliz, rus va oʻzbek tillarida ishlaydi. Interfeys toʻliq tarjima qilingan, lekin postlar bilan qiyinroq: har doim ham postni chiqarishdan oldin tarjima qilishga ulgurmaymiz. Bizga post bitta tilda chiqadigan, tarjimalar keyinroq qoʻshiladigan va bunda havolalar buzilmaydigan tuzilma kerak edi.
+
+## Har bir post uchun bitta papka
+
+Har bir post alohida papkada, har bir til uchun bitta MDX fayl:
+
+```txt
+content/blog/
+  three-languages-one-blog/
+    en.mdx
+    ru.mdx
+    uz.mdx
+```
+
+Inglizcha fayl majburiy, qolgan ikkitasi ixtiyoriy. Papka nomi post manziliga aylanadi va barcha tillarda bir xil, shuning uchun tilni almashtirsangiz, oʻsha postda qolasiz.
+
+## Zaxira til: ingliz tili
+
+Oʻquvchi `/uz/blog/some-post` sahifasini ochsa-yu, `uz.mdx` fayli boʻlmasa, sahifa `en.mdx` ni koʻrsatadi va bu haqda yuqorida yozib qoʻyadi. Manzil ishlayveradi, sahifaning qolgan qismi (navigatsiya, sanalar, yozuvlar) esa oʻzbekcha qoladi.
+
+Qaysi faylni olishni kichik bir funksiya hal qiladi:
+
+```ts title="src/shared/lib/content/files.ts"
+export const resolveSourceLocale = (type, slug, locale) => {
+  if (existsSync(join(CONTENT_ROOT, type, slug, `${locale}.mdx`))) return locale
+  if (existsSync(join(CONTENT_ROOT, type, slug, 'en.mdx'))) return 'en'
+  return null
+}
+```
+
+## "Faqat oʻzbekcha" checkboxi
+
+Zaxira til havolalarni saqlab qoladi, lekin oʻzbek tilini tanlagan oʻquvchiga inglizcha postlarga toʻla roʻyxat kerak boʻlmasligi mumkin. Blog sahifasida joriy tilga mos yozuvli checkbox bor: "Only English", "Только на русском" yoki "Faqat oʻzbekcha". Belgilansa, tarjimasi yoʻq postlar yashiriladi.
+
+Filtr brauzerda, build vaqtida chizilgan roʻyxat ustida ishlaydi, shuning uchun sahifaning oʻzi statik boʻlib qoladi.
+
+## Hammasi oldindan yigʻiladi
+
+Har bir postning sahifasi build vaqtidayoq barcha tillar uchun tayyor boʻladi. `generateStaticParams` manzillar roʻyxatini qaytaradi, `dynamicParams = false` esa boshqa har qanday manzilni serverda chizish oʻrniga 404 ga aylantiradi:
+
+```ts
+export const generateStaticParams = () => getPostSlugs().map(slug => ({ slug }))
+
+export const dynamicParams = false
+```
+
+Frontmatter build paytida zod sxemasidan oʻtadi. Sarlavhasi yoʻq yoki sanasi notoʻgʻri post buildni toʻxtatadi va saytga boʻsh sarlavha bilan chiqib qolmaydi.

@@ -64,3 +64,13 @@ next-env.d.ts
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Agents
+.agents
+.claude
+
+# Brandkit (Temporary)
+FlakeForge_Brandkit
+
+# lighthouse ci
+.lighthouseci

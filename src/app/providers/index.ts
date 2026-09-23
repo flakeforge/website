@@ -1,1 +1,2 @@
-export { ThemeProvider } from './ThemeProvider'
+export { SmoothScrollProvider } from './SmoothScrollProvider'
+export { ThemeSync } from './ThemeSync'

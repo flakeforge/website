@@ -1,0 +1,42 @@
+---
+title: Telegramga yuboradigan aloqa formasi
+description: FlakeForge aloqa formasi har bir murojaatni Server Action orqali Telegram chatga yuboradi. Validatsiya, spamga qarshi tekshiruvlar va escaping bilan.
+date: 2026-09-22
+tags: [next.js, telegram, forms]
+---
+
+Bu saytdagi aloqa formasi har bir murojaatni Telegram chatga yetkazadi. Maʼlumotlar bazasi ham, uchinchi tomon form xizmati ham yoʻq: bitta Server Action va Bot APIʼga bitta soʻrov.
+
+## Server Action
+
+Forma Server Actionʼga yuboriladi, u maydonlarni zod bilan tekshiradi. Natijada gaplar emas, xato kodlari qaytadi. Brauzer har bir kodni oʻquvchi tilidagi xabarga aylantiradi, shuning uchun server kodiga tarjimalar umuman kerak emas.
+
+```ts
+const briefSchema = z.object({
+  name: z.string().trim().min(1).max(120),
+  email: z.email().max(200),
+  telegram: z.string().trim().max(64).optional(),
+  services: z.array(z.enum(SERVICE_IDS)),
+  message: z.string().trim().min(1).max(4000),
+})
+```
+
+## Captchasiz spam tekshiruvi
+
+Ochiq-oydin botlarga ikkita arzon tekshiruv yetadi:
+
+- Odamlar koʻrmaydigan yashirin maydon. Botlar odatda barcha maydonlarni toʻldiradi, shuning uchun bu maydon toʻldirilgan murojaat jimgina tashlab yuboriladi.
+- Bitta IP manzildan oʻn daqiqada beshtadan ortiq xabar qabul qilinmaydi. Hisoblagich xotirada saqlanadi.
+
+Xotiradagi hisoblagich server qayta ishga tushganda nolga tushadi va replikalar orasida boʻlinmaydi. Bitta konteyner uchun bu yetarli. Agar sayt bir nechta replikada ishlasa, hisoblagichni Redis yoki shunga oʻxshash omborga koʻchirish kerak boʻladi.
+
+## Telegramga yuborish
+
+Bot APIʼdagi `sendMessage` HTML qabul qiladi. Tashrif buyuruvchi yozgan hamma narsa xabarga qoʻshilishidan oldin escape qilinadi, shuning uchun `<b>` kabi ism formatlash emas, oddiy matn boʻlib koʻrinadi:
+
+```ts
+const escapeTelegramHtml = (value: string) =>
+  value.replace(/[&<>"]/g, char => HTML_ESCAPES[char] ?? char)
+```
+
+Bot tokeni va chat ID muhit oʻzgaruvchilaridan olinadi. Agar ular boʻlmasa, forma jimgina ishlamay qolmaydi: tashrif buyuruvchiga email manzilimizga yozishni taklif qiladi.

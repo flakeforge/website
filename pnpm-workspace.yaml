@@ -1,0 +1,15 @@
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  '@tailwindcss/oxide': true
+  lefthook: true
+  sharp: true
+  unrs-resolver: true
+
+minimumReleaseAge: 1440
+
+trustPolicy: no-downgrade
+
+trustPolicyExclude:
+  - semver@5.7.2
+  - semver@6.3.1

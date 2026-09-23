@@ -1,0 +1,64 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": false,
+  "trailingComma": "es5",
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "sortImports": {
+    "groups": [
+      "react",
+      "builtin",
+      "external",
+      "internal",
+      ["parent", "sibling", "index"],
+      "style",
+      "unknown"
+    ],
+    "customGroups": [
+      {
+        "groupName": "react",
+        "elementNamePattern": ["react", "react-dom", "next", "next/**"]
+      }
+    ],
+    "internalPattern": [
+      "@/",
+      "@app/",
+      "@modules/",
+      "@widgets/",
+      "@features/",
+      "@entities/",
+      "@shared/",
+      "@lib/",
+      "@config/",
+      "@styles/",
+      "@content/"
+    ],
+    "newlinesBetween": true
+  },
+  "sortTailwindcss": {
+    "stylesheet": "./src/shared/styles/globals.css",
+    "functions": ["cn"]
+  },
+  "sortPackageJson": {
+    "sortScripts": false
+  },
+  "ignorePatterns": [
+    ".next/**",
+    ".lighthouseci/**",
+    ".agents/**",
+    ".claude/**",
+    ".hermes/**",
+    ".idea/**",
+    "FlakeForge_Brandkit/**",
+    "pnpm-lock.yaml",
+    "skills-lock.json",
+    "next-env.d.ts",
+    "src/shared/ui/brand/wordmark-glyphs.ts"
+  ]
+}

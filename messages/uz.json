@@ -1,3 +1,252 @@
 {
-  "Brand": "FlakeForge"
+  "Metadata": {
+    "siteDescription": "FlakeForge mahsulot studiyasi. Veb-ilovalar, mobil ilovalar va Telegram botlar yaratamiz, oʻz vositalarimizni esa open source qilib chiqaramiz.",
+    "home": {
+      "title": "FlakeForge: mahsulot studiyasi va open source",
+      "description": "Mijozlar uchun veb-ilovalar, mobil ilovalar va Telegram botlar yaratamiz. Ish davomida yozgan vositalarimizni GitHubʼga joylaymiz."
+    },
+    "work": {
+      "title": "Loyihalar",
+      "description": "Mijozlar loyihalari va oʻz mahsulotlarimiz: keyslar va manba kodiga havolalar."
+    },
+    "services": {
+      "title": "Xizmatlar",
+      "description": "Veb-dasturlash, mobil ilovalar, Telegram botlar va Mini Apps. Har bir xizmatga nima kiradi va loyiha qanday kechadi."
+    },
+    "about": {
+      "title": "Studiya haqida",
+      "description": "Kimmiz, qanday ishlashni yoqtiramiz va nega vositalarimizni open source qilamiz."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Qanday ishlashimiz haqida yozuvlar: vositalar, texnik qarorlar va duch kelgan muammolar."
+    },
+    "contact": {
+      "title": "Loyihani boshlash",
+      "description": "Nima qurmoqchi ekaningizni yozing. Email yoki Telegram orqali javob beramiz."
+    },
+    "notFound": {
+      "title": "Sahifa topilmadi"
+    }
+  },
+  "Common": {
+    "skipToContent": "Asosiy qismga oʻtish",
+    "homeLabel": "FlakeForge, bosh sahifa",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish",
+    "menu": "Menyu",
+    "language": "Til",
+    "mainNavigation": "Asosiy navigatsiya",
+    "startProject": "Loyihani boshlash",
+    "readingTime": "{minutes} daqiqa oʻqish",
+    "englishVersion": "Ingliz tilida",
+    "newTab": "(yangi oynada ochiladi)",
+    "backToTop": "Yuqoriga",
+    "copyCode": "Kodni nusxalash",
+    "copied": "Nusxalandi"
+  },
+  "Theme": {
+    "label": "Mavzu",
+    "light": "Yorugʻ",
+    "dark": "Qorongʻi",
+    "system": "Tizimdagidek"
+  },
+  "Nav": {
+    "work": "Loyihalar",
+    "services": "Xizmatlar",
+    "about": "Studiya",
+    "blog": "Blog",
+    "contact": "Aloqa"
+  },
+  "Services": {
+    "web": {
+      "title": "Veb-dasturlash",
+      "summary": "Next.js va TypeScript asosida saytlar, veb-ilovalar va ichki vositalar.",
+      "points": [
+        "Kompaniya saytlari va landinglar",
+        "Veb-ilovalar va dashboardlar",
+        "Mavjud saytlar uchun tezlik, accessibility va SEO"
+      ]
+    },
+    "mobile": {
+      "title": "Mobil ilovalar",
+      "summary": "Odamlar har kuni telefonda foydalanadigan iOS va Android ilovalar.",
+      "points": [
+        "iOS va Android uchun ilovalar",
+        "Mahsulot imkon bersa, umumiy kod bazasi",
+        "Storeʼlarga joylash va yangilanishlarni chiqarish"
+      ]
+    },
+    "telegram": {
+      "title": "Telegram botlar va Mini Apps",
+      "summary": "Foydalanuvchilari kun boʻyi Telegramda boʻladigan mahsulotlar uchun botlar va Mini Apps.",
+      "points": [
+        "Qoʻllab-quvvatlash, savdo va bildirishnomalar uchun botlar",
+        "Telegram ichida toʻliq veb-interfeysli Mini Apps",
+        "Backend, CRM yoki toʻlov tizimingiz bilan integratsiya"
+      ]
+    }
+  },
+  "Process": {
+    "discover": {
+      "title": "Oʻrganamiz",
+      "body": "Muammoni, mahsulotdan kim foydalanishini va vaqt hamda budjet cheklovlarini muhokama qilamiz. Natijada birinchi reliz uchun yozma reja olasiz."
+    },
+    "design": {
+      "title": "Loyihalaymiz",
+      "body": "Asosiy ssenariylarni tuzamiz va eng muhim ekranlarni chizamiz. Kod yozishni boshlashdan oldin prototipni oʻzingiz bosib koʻrasiz."
+    },
+    "build": {
+      "title": "Quramiz",
+      "body": "Qisqa sikllarda ishlaymiz va har bir yangilanishni istalgan payt ochishingiz mumkin boʻlgan test manzilga chiqaramiz. Kod birlashtirishdan oldin reviewʼdan oʻtadi."
+    },
+    "launch": {
+      "title": "Ishga tushiramiz",
+      "body": "Birinchi versiyani chiqaramiz, undan qanday foydalanishayotganini kuzatamiz va xalaqit beradigan joylarni tuzatamiz. Keyin yo birga davom etamiz, yo kod va hujjatlarni topshiramiz."
+    }
+  },
+  "Home": {
+    "hero": {
+      "title": "Gʻoyalarni <accent>reallikka aylantiramiz.</accent>",
+      "lede": "Veb-ilovalar, mobil ilovalar va Telegram botlarni loyihalaymiz va quramiz. Oʻzimiz uchun yozgan vositalar GitHubʼda ochiq turadi.",
+      "secondary": "Loyihalarimiz"
+    },
+    "services": {
+      "title": "Nima quramiz",
+      "cta": "Barcha xizmatlar"
+    },
+    "work": {
+      "title": "Tanlangan loyihalar",
+      "cta": "Barcha loyihalar"
+    },
+    "openSource": {
+      "title": "Ochiq kod",
+      "body": "Vositalarimiz va mahsulotlarimizning bir qismi GitHubʼda ochiq. Biz bilan ishlashga qaror qilishdan oldin kodni oʻqib chiqishingiz mumkin.",
+      "cta": "GitHubʼdagi FlakeForge"
+    },
+    "process": {
+      "title": "Loyiha qanday kechadi"
+    },
+    "writing": {
+      "title": "Soʻnggi postlar",
+      "cta": "Barcha postlar"
+    },
+    "closing": {
+      "title": "Quradigan narsangiz bormi?",
+      "body": "Bizga yozing. Boshlash uchun bir necha qator yetarli."
+    }
+  },
+  "Project": {
+    "viewCaseStudy": "Keysni koʻrish",
+    "year": "Yil",
+    "services": "Xizmatlar",
+    "stack": "Stek",
+    "license": "Litsenziya",
+    "status": "Holat",
+    "links": "Havolalar",
+    "repository": "Manba kodi",
+    "website": "Sayt",
+    "next": "Keyingi loyiha",
+    "kind": {
+      "open-source": "Open source",
+      "client": "Mijoz loyihasi"
+    },
+    "statusValue": {
+      "live": "Ishlamoqda",
+      "in-progress": "Jarayonda",
+      "early": "Dastlabki bosqich"
+    },
+    "fallbackNotice": "Bu keys hali tarjima qilinmagan, shuning uchun inglizcha versiyasini koʻrsatyapmiz."
+  },
+  "WorkPage": {
+    "title": "Loyihalar",
+    "intro": "Mijozlar loyihalari va oʻz mahsulotlarimiz. Ularning aksariyatining kodi ochiq."
+  },
+  "ServicesPage": {
+    "title": "Uch yoʻnalish, puxta bajarilgan",
+    "intro": "Veb, telefon va Telegram uchun mahsulot quramiz. Har bir loyiha qisqa rejadan boshlanadi va ustida ishlashni davom ettirsa boʻladigan kod bilan tugaydi.",
+    "includes": "Nimalar kiradi",
+    "processTitle": "Qanday ishlaymiz"
+  },
+  "AboutPage": {
+    "title": "Mijozlar uchun mahsulot, qolganlar uchun vosita yaratamiz.",
+    "intro": "FlakeForge mahsulot studiyasi. Veb, mobil va Telegram yoʻnalishida mijozlar loyihalarini olamiz, ish davomida yozgan vositalarimizni esa open source qilib chiqaramiz.",
+    "principlesTitle": "Qanday ishlashni yoqtiramiz",
+    "principles": {
+      "open": {
+        "title": "Standart holatda ochiq",
+        "body": "Yaratgan narsamiz bitta loyihadan tashqarida ham foydali boʻlsa, uni ochiq litsenziya bilan chiqaramiz."
+      },
+      "early": {
+        "title": "Erta chiqaramiz",
+        "body": "Haqiqiy foydalanuvchilar oldidagi kichik reliz uzun rejadan koʻproq narsa oʻrgatadi. Birinchi versiyani chiqarib, keyin uni yaxshilab boramiz."
+      },
+      "written": {
+        "title": "Yozib qoʻyamiz",
+        "body": "Reja, qarorlar va sozlash qadamlarini yozib boramiz, shunda loyiha bitta odamning xotirasiga bogʻliq boʻlib qolmaydi."
+      }
+    },
+    "teamTitle": "Jamoa",
+    "roles": {
+      "muhammaddiyor": "Maintainer"
+    },
+    "profile": "GitHub profili"
+  },
+  "Blog": {
+    "title": "Blog",
+    "intro": "Qanday ishlashimiz haqida yozuvlar: vositalar, texnik qarorlar va duch kelgan muammolar.",
+    "onlyLocale": "Faqat oʻzbekcha",
+    "empty": "Oʻzbek tilida hali post yoʻq.",
+    "count": "{count} ta post",
+    "fallbackNotice": "Bu post hali tarjima qilinmagan, shuning uchun inglizcha versiyasini koʻrsatyapmiz.",
+    "back": "Barcha postlar",
+    "rss": "RSS lenta",
+    "rssTitle": "FlakeForge blogi",
+    "tags": "Teglar",
+    "morePosts": "Boshqa postlar"
+  },
+  "Contact": {
+    "title": "Loyihani boshlash",
+    "intro": "Nima qurmoqchi ekaningiz haqida bir necha qator yozing. Email yoki Telegram orqali javob beramiz.",
+    "direct": "Toʻgʻridan-toʻgʻri yozgan qulayroqmi?",
+    "email": "Email",
+    "telegram": "Telegram",
+    "form": {
+      "name": "Ismingiz",
+      "email": "Email",
+      "telegram": "Telegram username",
+      "telegramHint": "Ixtiyoriy. Emaildan koʻra qulayroq boʻlsa, oʻsha yerga yozamiz.",
+      "services": "Sizga nima kerak?",
+      "message": "Loyiha haqida",
+      "messageHint": "Nima qurmoqchisiz, kim uchun va muddatlar bormi.",
+      "honeypot": "Bu maydonni boʻsh qoldiring",
+      "submit": "Yuborish",
+      "sending": "Yuborilmoqda"
+    },
+    "errors": {
+      "required": "Bu maydonni toʻldiring.",
+      "email": "Toʻgʻri email manzil kiriting.",
+      "tooLong": "Matn juda uzun.",
+      "rateLimited": "Manzilingizdan juda koʻp xabar keldi. Bir necha daqiqadan keyin qayta urinib koʻring.",
+      "unavailable": "Forma hozir ishlamayapti. Bizga {email} manziliga yozing.",
+      "failed": "Yuborishda xatolik yuz berdi. Qayta urinib koʻring yoki {email} manziliga yozing."
+    },
+    "success": {
+      "title": "Xabar yuborildi",
+      "body": "Rahmat. Oʻqib chiqib, javob beramiz.",
+      "again": "Yana bir xabar yuborish"
+    }
+  },
+  "Footer": {
+    "tagline": "Gʻoyalarni reallikka aylantiramiz.",
+    "pages": "Sahifalar",
+    "openSource": "Open source",
+    "contact": "Aloqa",
+    "rights": "© {year} FlakeForge"
+  },
+  "NotFound": {
+    "title": "Bunday sahifa yoʻq",
+    "body": "Havola eskirgan yoki sahifa boshqa joyga koʻchgan boʻlishi mumkin.",
+    "cta": "Bosh sahifaga"
+  }
 }

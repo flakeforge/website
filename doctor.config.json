@@ -1,0 +1,17 @@
+{
+  "share": false,
+  "blocking": "error",
+  "ignore": {
+    "files": ["src/shared/ui/brand/wordmark-glyphs.ts"],
+    "overrides": [
+      {
+        "files": ["src/shared/lib/content/files.ts", "src/app/**/opengraph-image.tsx"],
+        "rules": ["security/detect-non-literal-fs-filename"]
+      },
+      {
+        "files": ["src/shared/lib/content/mdx.ts"],
+        "rules": ["react-doctor/no-dynamic-import-path"]
+      }
+    ]
+  }
+}

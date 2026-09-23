@@ -1,12 +1,18 @@
-import { type FC } from 'react'
 import { type Metadata } from 'next'
+import { type FC } from 'react'
 
+import { getLocale, getTranslations } from 'next-intl/server'
+
+import { createPageMetadata } from '@lib/seo'
 import { Home } from '@modules/home'
 
-export const metadata: Metadata = {
-  title: 'Welcome to FlakeForge',
-  description:
-    'Discover how FlakeForge transforms bold ideas into real-world digital products. Explore our open-source projects, scalable applications, and developer tools.',
+export const generateMetadata = async (): Promise<Metadata> => {
+  const locale = await getLocale()
+  const t = await getTranslations('Metadata.home')
+  return {
+    ...createPageMetadata({ locale, path: '/', title: t('title'), description: t('description') }),
+    title: { absolute: t('title') },
+  }
 }
 
 const HomePage: FC = () => <Home />

@@ -1,0 +1,42 @@
+---
+title: A contact form that posts to Telegram
+description: The FlakeForge contact form sends each brief to a Telegram chat through a Server Action. Validation, spam checks, and escaping included.
+date: 2026-09-22
+tags: [next.js, telegram, forms]
+---
+
+The contact form on this site delivers every brief to a Telegram chat. There is no database and no third-party form service: one Server Action and one call to the Bot API.
+
+## The Server Action
+
+The form posts to a Server Action, which validates the fields with zod. It returns error codes, not sentences. The browser turns each code into a message in the reader's language, so the server code does not need translations at all.
+
+```ts
+const briefSchema = z.object({
+  name: z.string().trim().min(1).max(120),
+  email: z.email().max(200),
+  telegram: z.string().trim().max(64).optional(),
+  services: z.array(z.enum(SERVICE_IDS)),
+  message: z.string().trim().min(1).max(4000),
+})
+```
+
+## Spam checks without a captcha
+
+Two cheap checks deal with the obvious bots:
+
+- A hidden field that people never see. Bots tend to fill in every input, so a submission with that field set is dropped quietly.
+- A limit of five messages per IP address in ten minutes, kept in memory.
+
+The in-memory counter resets when the server restarts and is not shared between replicas. For a single container that is fine. If the site ever runs on several replicas, the counter should move to Redis or a similar store.
+
+## Sending to Telegram
+
+The Bot API's `sendMessage` accepts HTML. Everything the visitor typed is escaped before it goes into the message, so a name like `<b>` shows up as text instead of formatting:
+
+```ts
+const escapeTelegramHtml = (value: string) =>
+  value.replace(/[&<>"]/g, char => HTML_ESCAPES[char] ?? char)
+```
+
+The bot token and chat ID come from environment variables. If they are missing, the form tells the visitor to write to our email address instead of failing without a word.

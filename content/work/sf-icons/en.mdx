@@ -1,0 +1,29 @@
+---
+title: sf-icons
+summary: Apple SF Symbols as optimized SVG files and React components, published on npm.
+year: 2026
+order: 2
+kind: open-source
+status: in-progress
+services: [web]
+stack: [TypeScript, React, Rolldown, SVGO, Turborepo]
+license: MIT
+repository: https://github.com/flakeforge/sf-icons
+---
+
+## What it is
+
+sf-icons packages Apple's SF Symbols for the web. Each symbol ships as an optimized SVG and as a React component in the `@flakeforge/sf-icons` package on npm.
+
+## How it is put together
+
+- SVGO cleans up every source file before it is published.
+- Rolldown builds the package, and type definitions are generated next to the code.
+- Each React icon has its own entry point, `@flakeforge/sf-icons/react/<name>`, so an app bundles only the icons it imports.
+- The package is marked as free of side effects, which lets bundlers drop code nobody uses.
+
+The repository is a Turborepo monorepo that keeps the package and its apps side by side.
+
+## Status
+
+The first release is on npm. The API may still change before version 1.0.

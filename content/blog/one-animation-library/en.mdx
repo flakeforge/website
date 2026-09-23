@@ -1,0 +1,42 @@
+---
+title: One animation library for the whole site
+description: Why every animation on the FlakeForge site runs on GSAP, how smooth scrolling fits in, and what happens when a visitor turns motion off.
+date: 2026-09-22
+tags: [gsap, animation, accessibility]
+---
+
+This site has a pinned stack of service cards, a horizontal gallery of projects, headlines that reveal line by line, and a footer wordmark that rises as you reach the bottom. All of it runs on GSAP. We decided against a second animation library, and this post explains why.
+
+## Scroll is the main timeline
+
+Most of the motion here is tied to scroll position: sections pin, tracks slide sideways, a line draws down the process section. GSAP's ScrollTrigger handles pinning and scrubbing, and SplitText breaks headlines into lines for the reveals. A React animation library on top would mean two engines reading scroll position and two sets of easing curves to keep in step.
+
+## Smooth scrolling on the same clock
+
+Smooth scrolling comes from Lenis. By default Lenis runs its own animation frame loop, which can drift from ScrollTrigger and make pinned sections jitter. We drive Lenis from GSAP's ticker instead, so both update in the same frame:
+
+```ts
+const lenis = new Lenis({ autoRaf: false })
+
+lenis.on('scroll', ScrollTrigger.update)
+gsap.ticker.add(time => lenis.raf(time * 1000))
+gsap.ticker.lagSmoothing(0)
+```
+
+## Menus and dialogs use CSS
+
+Not every animation belongs in GSAP. The language menu, the mobile navigation, and the form checkboxes come from Base UI, which sets `data-starting-style` and `data-ending-style` on elements while they enter and leave. A CSS transition on those attributes is enough, and it works before any animation code has loaded.
+
+## When a visitor turns motion off
+
+Every scroll animation is registered through `gsap.matchMedia()`:
+
+```ts
+const mm = gsap.matchMedia()
+
+mm.add('(prefers-reduced-motion: no-preference)', () => {
+  gsap.from(lines, { yPercent: 110, stagger: 0.08 })
+})
+```
+
+If the operating system asks for reduced motion, that block never runs. Lenis is not created either, so the page scrolls natively and every element sits in its final position. If the setting changes while the page is open, GSAP reverts the animations on its own.

@@ -1,34 +1,21 @@
 {
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": true,
-
+  "editor.formatOnPaste": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.oxc": "explicit",
     "source.organizeImports": "never"
   },
 
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-
-  "tailwindCSS.experimental.classRegex": ["twMerge\\(([^)]*)\\)", "clsx\\(([^)]*)\\)"],
+  "tailwindCSS.classFunctions": ["cn"],
 
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.importModuleSpecifierEnding": "minimal",
   "typescript.preferences.importModuleSpecifier": "non-relative",
 
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][css][markdown][mdx][yaml]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   },
 
-  "editor.formatOnPaste": false,
-  "explorer.confirmDelete": true,
-  "editor.formatOnSaveMode": "modifications",
-  "eslint.quiet": true
+  "explorer.confirmDelete": true
 }

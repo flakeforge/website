@@ -1,0 +1,54 @@
+---
+title: How this blog handles three languages
+description: One folder per post, English as the fallback, and a checkbox that hides untranslated posts. The setup behind the FlakeForge blog.
+date: 2026-09-22
+tags: [next.js, mdx, i18n]
+---
+
+The FlakeForge site is available in English, Russian, and Uzbek. The interface is fully translated, but blog posts are harder: we do not always have time to translate a post before it goes out. We wanted a setup where a post can ship in one language and pick up translations later, without broken links along the way.
+
+## One folder per post
+
+Each post is a folder with one MDX file per language:
+
+```txt
+content/blog/
+  three-languages-one-blog/
+    en.mdx
+    ru.mdx
+    uz.mdx
+```
+
+The English file is required and the other two are optional. The folder name is the URL slug, and it is the same in every language, so switching the language on a post keeps you on the same post.
+
+## Falling back to English
+
+When a reader opens `/uz/blog/some-post` and there is no `uz.mdx`, the page renders `en.mdx` and says so at the top. The URL still works, and the rest of the page (navigation, dates, labels) stays in Uzbek.
+
+Picking the file is a small function:
+
+```ts title="src/shared/lib/content/files.ts"
+export const resolveSourceLocale = (type, slug, locale) => {
+  if (existsSync(join(CONTENT_ROOT, type, slug, `${locale}.mdx`))) return locale
+  if (existsSync(join(CONTENT_ROOT, type, slug, 'en.mdx'))) return 'en'
+  return null
+}
+```
+
+## The "Only Uzbek" checkbox
+
+Fallback keeps links alive, but a reader who picked Uzbek may not want a list full of English posts. The blog index has a checkbox labeled for the active language: "Only English", "Только на русском", or "Faqat oʻzbekcha". When it is checked, posts that would fall back to English are hidden.
+
+The filter runs in the browser over a list that was rendered at build time, so the page itself stays static.
+
+## Everything is built ahead of time
+
+Every post page exists for every language at build time. `generateStaticParams` returns the slugs, and `dynamicParams = false` turns any other slug into a 404 instead of a server render:
+
+```ts
+export const generateStaticParams = () => getPostSlugs().map(slug => ({ slug }))
+
+export const dynamicParams = false
+```
+
+Frontmatter goes through a zod schema during the build. A post with a missing title or a malformed date fails the build, so it never reaches the site with an empty heading.

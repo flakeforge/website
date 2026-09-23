@@ -1,0 +1,220 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "jsx-a11y", "nextjs", "import", "promise", "unicorn", "oxc"],
+  "jsPlugins": ["eslint-plugin-security"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "warn"
+  },
+  "options": {
+    "typeAware": true
+  },
+  "env": {
+    "builtin": true,
+    "browser": true,
+    "node": true,
+    "es2024": true
+  },
+  "ignorePatterns": [
+    ".next/**",
+    ".lighthouseci/**",
+    ".agents/**",
+    ".claude/**",
+    ".hermes/**",
+    "FlakeForge_Brandkit/**",
+    "next-env.d.ts"
+  ],
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_"
+      }
+    ],
+    "arrow-body-style": ["error", "as-needed"],
+    "prefer-arrow-callback": "error",
+    "no-console": [
+      "warn",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "typescript/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": true,
+        "allowHigherOrderFunctions": true,
+        "allowDirectConstAssertionInArrowFunctions": true
+      }
+    ],
+    "typescript/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "fixStyle": "inline-type-imports"
+      }
+    ],
+    "typescript/consistent-type-assertions": [
+      "error",
+      {
+        "assertionStyle": "as",
+        "objectLiteralTypeAssertions": "never"
+      }
+    ],
+    "typescript/no-explicit-any": "error",
+    "typescript/no-floating-promises": "error",
+    "typescript/no-misused-promises": "error",
+    "typescript/await-thenable": "error",
+    "typescript/no-unnecessary-type-assertion": "error",
+    "typescript/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": "allow-with-description",
+        "ts-ignore": "allow-with-description",
+        "ts-nocheck": true,
+        "minimumDescriptionLength": 10
+      }
+    ],
+    "react/display-name": "error",
+    "react/jsx-key": "error",
+    "react/jsx-no-target-blank": [
+      "error",
+      {
+        "allowReferrer": false,
+        "enforceDynamicLinks": "always",
+        "warnOnSpreadAttributes": true,
+        "links": true,
+        "forms": true
+      }
+    ],
+    "react/jsx-no-useless-fragment": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "react/jsx-pascal-case": [
+      "error",
+      {
+        "allowAllCaps": false,
+        "allowNamespace": false
+      }
+    ],
+    "react/jsx-max-depth": [
+      "error",
+      {
+        "max": 8
+      }
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "never",
+        "children": "never",
+        "propElementValues": "always"
+      }
+    ],
+    "react/jsx-boolean-value": ["error", "never"],
+    "react/no-multi-comp": [
+      "error",
+      {
+        "ignoreStateless": false
+      }
+    ],
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "jsx-a11y/anchor-has-content": [
+      "error",
+      {
+        "components": ["Link"]
+      }
+    ],
+    "jsx-a11y/alt-text": "error",
+    "jsx-a11y/no-autofocus": "error",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "controlComponents": ["Checkbox"],
+        "depth": 3
+      }
+    ],
+    "nextjs/no-html-link-for-pages": "error",
+    "nextjs/no-img-element": "warn",
+    "nextjs/no-sync-scripts": "error",
+    "import/no-duplicates": "error",
+    "import/first": "error",
+    "import/no-self-import": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-cycle": "error",
+    "promise/param-names": "error",
+    "promise/no-return-wrap": "error",
+    "promise/no-nesting": "error",
+    "security/detect-buffer-noassert": "error",
+    "security/detect-child-process": "error",
+    "security/detect-eval-with-expression": "error",
+    "security/detect-new-buffer": "error",
+    "security/detect-non-literal-fs-filename": "error",
+    "security/detect-non-literal-regexp": "error",
+    "security/detect-non-literal-require": "error",
+    "security/detect-possible-timing-attacks": "error",
+    "security/detect-pseudoRandomBytes": "error",
+    "security/detect-unsafe-regex": "error",
+    "import/no-unassigned-import": [
+      "warn",
+      {
+        "allow": ["server-only", "**/*.css"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/shared/lib/content/**/*.ts", "src/app/**/opengraph-image.tsx"],
+      "rules": {
+        "security/detect-non-literal-fs-filename": "off"
+      }
+    },
+    {
+      "files": ["*.config.ts", "*.config.mjs", "next.config.ts"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": [
+        "src/shared/ui/motion/**",
+        "src/modules/**/*Scene.tsx",
+        "src/widgets/**/*Scene.tsx"
+      ],
+      "rules": {
+        "typescript/no-misused-promises": [
+          "error",
+          {
+            "checksVoidReturn": {
+              "properties": false
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
